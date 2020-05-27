@@ -55,9 +55,13 @@ song.addEventListener("timeupdate",function(){      //song.ontimeupdate=function
     let min=Math.floor(remainingTime/60);
     let sec=Math.floor(remainingTime%60);
     timeDisplay.textContent=`${min}:${sec}`;
+    if(sec<=9)
+    {
+        timeDisplay.textContent=`${min}:0${sec}`;
+    }
     let progress = outline.getTotalLength() - (currentTime/fakeTime)*outline.getTotalLength();
     outline.style.strokeDashoffset=progress;
-    if(remainingTime==0)
+    if(currentTime>=fakeTime)
     {
         song.pause();
         song.currentTime=0;
