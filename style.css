@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app{
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.timer-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+    height: 80%;
+}
+.timer-section button,.sound-section button{
+    width: 30%;
+    height: 10%;
+    background: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 100%;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.timer-section button:hover{background: white; color: black;}
+.player-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+    height: 80%;
+}
+.player-section h1{
+    color: white;
+    font-size: 50px;
+}
+.player-section svg{
+    position: absolute;
+    height: 40%;
+    bottom: 34%;
+    transform: rotate(-90deg);
+    pointer-events: none;
+}
+.player-section img{
+    margin: auto;
+}
+.sound-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+    height: 80%;
+}
+.sound-section button{
+    height: 120px;
+    width: 120px;
+    padding: 30px;
+    border-radius: 50%;
+    border: none;
+}
+.sound-section button:nth-child(1){background: #4972a1;}
+.sound-section button:nth-child(2){background: #a14f49;}
+.sound-section img{
+    height: 100%;
+}
+video{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+@media screen and (max-width: 767px){
+    .player-section{
+        position: fixed;
+        top: 0;
+        height: 50%;
+    }
+    .player-section img{
+    width: 50px;
+    padding-top: 30px;
+    padding-left: 10px;
+    }
+    .timer-section{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 50%;
+        width: 50%;
+    }
+    .timer-section button{
+        width: 70%;
+    }
+    .sound-section{
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        height: 50%;
+        width: 50%;
+    }
+}
